@@ -24,4 +24,7 @@ Trip.belongsTo(Location, {
   onDelete: 'CASCADE',
 });
 
+Traveller.belongsToMany(Location, { through: 'Trip' });
+Location.belongsToMany(Traveller, { through: 'Trip' });
+
 module.exports = { Location, Traveller, Trip };
